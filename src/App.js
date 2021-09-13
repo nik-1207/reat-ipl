@@ -1,8 +1,10 @@
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Navbar from './components/Navbar';
 import CardContainer from './Pages/CardContainer';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import URL from './helper/urlMap';
+import URL from './config/urlMap';
+import './App.css';
+
 function App() {
   return (
 <Router>
@@ -10,31 +12,31 @@ function App() {
   <div className="App">
     <Switch>
       <Route path='/' exact>
-        <CardContainer url={URL.default} isDef='true'/>
+        <CardContainer url={URL.default}/>
       </Route>
       <Route path='/teams/chennai-super-kings' exact>
-        <CardContainer url={URL['chennai-super-kings']} />
+        <CardContainer url={URL['chennai-super-kings']}/>
       </Route>      
       <Route path='/teams/delhi-capitals' exact>
-        <CardContainer  url={URL['delhi-capitals']} />
+        <CardContainer  url={URL['delhi-capitals']}/>
       </Route>      
       <Route path='/teams/kings-xi-punjab' exact>
-        <CardContainer url={URL['kings-xi-punjab']}/>
+        <CardContainer url={URL['kings-xi-punjab']} />
       </Route>      
       <Route path='/teams/kolkata-knight-riders' exact>
-        <CardContainer url={URL['kolkata-knight-riders']}/>
+        <CardContainer url={URL['kolkata-knight-riders']} />
       </Route>
       <Route path='/teams/mumbai-indians' exact>
-        <CardContainer url={URL['mumbai-indians']}/>
+        <CardContainer url={URL['mumbai-indians']} />
       </Route>
-      <Route path='teams/rajasthan-royals' exact>
-        <CardContainer url={URL['rajasthan-royals']}/>
+      <Route path='/teams/rajasthan-royals' exact>
+        <CardContainer url={URL['rajasthan-royals']} />
       </Route>
-      <Route path='/teams/"royal-challengers-bangalore"' exact>
-        <CardContainer url={URL['royal-challengers-bangalore']}/>
+      <Route path='/teams/royal-challengers-bangalore' exact>
+        <CardContainer url={URL['royal-challengers-bangalore']} />
       </Route>
       <Route path='/teams/sunrisers-hyderabad' exact>
-        <CardContainer url={URL['sunrisers-hyderabad']}/>
+        <CardContainer url={URL['sunrisers-hyderabad']} />
       </Route>
       <Route>
         <div>

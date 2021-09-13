@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../components/Card'
-import logomap from '../helper/logomap'
 import axios from 'axios';
+import Card from '../components/Card'
+import logomap from '../config/logomap'
 import '../components/temp.css'
 
 function CardContainer(props) {
-    const URL=props.url;
-    const isDef=props.isDef;
+    const {url}=props
     const [TeamData, setTeamData] = useState('');
-
+    const {players}=TeamData
     useEffect(() => {
         async function getAllTeamData()
         {
-            const res=await axios.get(URL)
+            const res=await axios.get(url)
             setTeamData(res.data)
         }
         getAllTeamData();
-    }, [URL])
-
-    if(isDef)
+    }, [url])
+    if(!players)
     {
         return (
             <div className='card-container'>
@@ -31,17 +29,38 @@ function CardContainer(props) {
                     data={TeamData[index]}
                     />
                 )
-            })
-            }
-
+            })}
         </div>
-    )
-    }else{
-        console.log(TeamData)
+    )}else{
         return(
-            <div>
-                hello
-            </div>
+            <div className='card-container'>
+            {
+                players.map((item,index)=>{
+                return(
+                    <div key={item.id}>
+                        <img src={item.image} alt={item.name}/>
+                        <div> 
+                            <p>{item.name}</p>
+                            <ul>
+                                <li>
+                                    <span >{item.stats.matches}</span>
+                                    <span >Matches</span>
+                                </li>
+                                <li>
+                                    <span >{item.stats.runs}</span>
+                                    <span>Runs</span>
+                                </li>       
+                                <li>
+                                    <span >{item.stats.wickets}</span>
+                                    <span >Wickets</span>
+                                </li>
+                            </ul>
+                            <button>View Profile</button>
+                        </div>
+                    </div>
+                )})
+            }
+        </div>
         )
     }
 
