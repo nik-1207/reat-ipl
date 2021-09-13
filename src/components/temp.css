@@ -1,9 +1,8 @@
-.card-container
-{
-    display:flex;
-    flex-wrap: wrap;
-    border: 2px solid blue  ;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid blue;
 }
-.card{
-    border: 2px solid red;
+.card {
+  border: 2px solid red;
 }
