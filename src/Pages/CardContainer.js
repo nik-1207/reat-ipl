@@ -3,6 +3,7 @@ import Card from '../components/Card'
 import logomap from '../helper/logomap'
 import axios from 'axios';
 import '../components/temp.css'
+
 function CardContainer() {
     const URL='https://ipl-t20.herokuapp.com/teams'
     const [TeamData, setTeamData] = useState('');
@@ -15,8 +16,9 @@ function CardContainer() {
         }
         getAllTeamData();
     }, [URL])
+
     return (
-        <div className='card-container'>
+            <div className='card-container'>
             {Object.keys(logomap).map((key,index)=>
             {
                 return(
@@ -28,6 +30,7 @@ function CardContainer() {
                 )
             })
             }
+
         </div>
     )
 }

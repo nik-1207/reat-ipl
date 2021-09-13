@@ -1,9 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import './temp.css'
 function Card(props)
 {
     const img=props.img;
     const data=props.data
+    const HISTORY=useHistory();
     if(!data)
     {
         return(
@@ -11,7 +13,7 @@ function Card(props)
         )
     }else{
         return (
-            <div className='card'>
+            <div className='card' onClick={()=>{HISTORY.push(`${data.id}`)}}>
                 <img src={img} alt="team-logo"/>
             <div>
                 <h2>{data.teamName}</h2>
