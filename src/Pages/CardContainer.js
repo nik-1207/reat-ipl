@@ -4,8 +4,9 @@ import logomap from '../helper/logomap'
 import axios from 'axios';
 import '../components/temp.css'
 
-function CardContainer() {
-    const URL='https://ipl-t20.herokuapp.com/teams'
+function CardContainer(props) {
+    const URL=props.url;
+    const isDef=props.isDef;
     const [TeamData, setTeamData] = useState('');
 
     useEffect(() => {
@@ -17,7 +18,9 @@ function CardContainer() {
         getAllTeamData();
     }, [URL])
 
-    return (
+    if(isDef)
+    {
+        return (
             <div className='card-container'>
             {Object.keys(logomap).map((key,index)=>
             {
@@ -33,6 +36,15 @@ function CardContainer() {
 
         </div>
     )
+    }else{
+        console.log(TeamData)
+        return(
+            <div>
+                hello
+            </div>
+        )
+    }
+
 }
 
 export default CardContainer

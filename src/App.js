@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import CardContainer from './Pages/CardContainer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import URL from './helper/urlMap';
 function App() {
   return (
 <Router>
@@ -9,31 +10,31 @@ function App() {
   <div className="App">
     <Switch>
       <Route path='/' exact>
-        <CardContainer/>
+        <CardContainer url={URL.default} isDef='true'/>
       </Route>
       <Route path='/teams/chennai-super-kings' exact>
-        CSK
+        <CardContainer url={URL['chennai-super-kings']} />
       </Route>      
       <Route path='/teams/delhi-capitals' exact>
-        DC
+        <CardContainer  url={URL['delhi-capitals']} />
       </Route>      
       <Route path='/teams/kings-xi-punjab' exact>
-        KXIP
+        <CardContainer url={URL['kings-xi-punjab']}/>
       </Route>      
       <Route path='/teams/kolkata-knight-riders' exact>
-        KKR
+        <CardContainer url={URL['kolkata-knight-riders']}/>
       </Route>
       <Route path='/teams/mumbai-indians' exact>
-        MI
+        <CardContainer url={URL['mumbai-indians']}/>
       </Route>
       <Route path='teams/rajasthan-royals' exact>
-        RR
+        <CardContainer url={URL['rajasthan-royals']}/>
       </Route>
       <Route path='/teams/"royal-challengers-bangalore"' exact>
-        RCB
+        <CardContainer url={URL['royal-challengers-bangalore']}/>
       </Route>
       <Route path='/teams/sunrisers-hyderabad' exact>
-        SRH
+        <CardContainer url={URL['sunrisers-hyderabad']}/>
       </Route>
       <Route>
         <div>
