@@ -13,7 +13,7 @@ function Card(props)
         )
     }else{
         return (
-            <div className='card' onClick={()=>{HISTORY.push(`${data.id}`)}}>
+            <div className='card' onClick={()=>{HISTORY.push(`teams/${data.id}`)}}>
                 <img src={img} alt="team-logo"/>
             <div>
                 <h2>{data.teamName}</h2>
