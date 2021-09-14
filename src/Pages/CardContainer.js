@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-import logomap from "../config/logomap";
+import logomap from "../config/logoMap";
 import "../components/temp.css";
 
 function CardContainer(props) {
