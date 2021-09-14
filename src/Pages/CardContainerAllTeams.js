@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/Card";
 import logomap from "../config/logoMap";
+import CONTAINER_STYLE from "../styles/ContainerStyle";
 import URL from "../config/urlMap";
 
 function CardContainer(props) {
   const url = URL.default;
   const [TeamData, setTeamData] = useState("");
+  const ContainerStyle=CONTAINER_STYLE();
   useEffect(() => {
     async function getAllTeamData() {
       const res = await axios.get(url);
@@ -18,7 +20,7 @@ function CardContainer(props) {
     return <h1>Loading...</h1>;
   } else {
     return (
-      <div className="card-container">
+      <div className={ContainerStyle.cardcontainer}>
         {Object.keys(logomap).map((key, index) => {
           return (
             <Card
