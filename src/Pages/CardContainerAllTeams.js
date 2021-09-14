@@ -4,7 +4,6 @@ import Card from "../components/Card";
 import logomap from "../config/logoMap";
 import CONTAINER_STYLE from "../styles/ContainerStyle";
 import URL from "../config/urlMap";
-import Loader from "../components/Loader";
 
 function CardContainer(props) {
   const url = URL.default;
@@ -18,7 +17,7 @@ function CardContainer(props) {
     getAllTeamData();
   }, [url]);
   if (!TeamData) {
-    return (<Loader/>)
+    return <h1>Loading</h1>
   } else {
     return (
       <div className={ContainerStyle.cardcontainer}>

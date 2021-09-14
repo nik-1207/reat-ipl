@@ -1,27 +1,29 @@
 import React from "react";
+import PLAYER_CARD from "../styles/TeamCardStyle";
 
 function PlayerCard(props) {
-  const { img, name, matches, runs, wickets } = props;
+const style=PLAYER_CARD()
+  const { img, name, matches, runs, wickets,teamName } = props;
   return (
-    <div>
-      <img src={img} alt={name} />
-      <div>
-        <p>{name}</p>
-        <ul>
-          <li>
-            <span >{matches}</span>
-            <span >Matches</span>
+    <div className={style.playerCard}>
+      <img src={img} alt={name} className={style[teamName]}/>
+      <div className={style.playerDetail}>
+        <p className={style.name}>{name}</p>
+        <ul className={style.stats}>
+          <li className={style.listItem}>
+            <span className={style.value}>{matches}</span><br/>
+            <span className={style.label}>Matches</span>
           </li>
-          <li>
-            <span >{runs}</span>
-            <span >Runs</span>
+          <li className={style.listItem}>
+            <span className={style.value}>{runs}</span><br/>
+            <span className={style.label}>Runs</span>
           </li>
-          <li>
-            <span >{wickets}</span>
-            <span >Wickets</span>
+          <li className={style.listItem}>
+            <span className={style.value}>{wickets}</span><br/>
+            <span className={style.label}>Wickets</span>
           </li>
         </ul>
-        <button>View Profile</button>
+        <button className={style.button}>View Profile</button>
       </div>
     </div>
   );
