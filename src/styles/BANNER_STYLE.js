@@ -29,6 +29,18 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#f83430 60%, #d40b07)",
+
+    }
+    
   },
   "mumbai-indians-banner": {
     backgroundImage:`url(${BANNER_IMAGE["mumbai-indians"].img.default})`,
@@ -38,6 +50,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#efb04c 60%, #db8e14)",
+
+    }
   },
   "rajasthan-royals-banner": {
     backgroundImage:`url(${BANNER_IMAGE["rajasthan-royals"].img.default})`,
@@ -47,6 +70,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#aa9a7f 60%, #857458)",
+
+    }
   },
   "kings-xi-punjab-banner": {
     backgroundImage:`url(${BANNER_IMAGE["kings-xi-punjab"].img.default})`,
@@ -56,6 +90,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: " linear-gradient(#c7c8ca 60%, #a0a1a5)",
+
+    }
   },
   "royal-challengers-bangalore-banner": {
     backgroundImage:`url(${BANNER_IMAGE["royal-challengers-bangalore"].img.default})`,
@@ -65,6 +110,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#aa9a7f 60%, #857458)",
+
+    }
   },
   "sunrisers-hyderabad-banner": {
     backgroundImage:`url(${BANNER_IMAGE["sunrisers-hyderabad"].img.default})`,
@@ -74,6 +130,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#0081e5 60%, #005699)",
+
+    }
   },
   "kolkata-knight-riders-banner": {
     backgroundImage:`url(${BANNER_IMAGE["kolkata-knight-riders"].img.default})`,
@@ -83,6 +150,17 @@ const BANNER_STYLES = createUseStyles({
     position:" relative",
     height: "400px",
     marginBottom: "30px",
+    '&::after':{
+        bottom:" 0",
+        content: '""',
+        clipPath: "polygon(0 0, 90.1% 0, 100% 100%, 0 100%)",
+        left: "0",
+        position: "absolute",
+        width: "63%",
+        top: "0",
+        background: "linear-gradient(#efb04c 60%, #db8e14)",
+
+    }
   },
 
   "chennai-super-kings-overlay": {
@@ -93,7 +171,8 @@ const BANNER_STYLES = createUseStyles({
     top: "0",
     width: "60%",
     zIndex: "5",
-    background:" #fdb913"
+    background:" #fdb913",
+    
 
   },
   "delhi-capitals-overlay": {
