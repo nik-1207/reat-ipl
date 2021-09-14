@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Navbar from "./components/Navbar";
 import CardContainerAllTeams from "./Pages/CardContainerAllTeams";
 import URL from "./config/urlMap";
