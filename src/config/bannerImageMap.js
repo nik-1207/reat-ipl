@@ -1,36 +1,37 @@
-const BANNER_IMAGE = {
+const BANNER_STYLE = {
   "chennai-super-kings": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/CSK.jpg"),
+    "img-huddle": require("../assets/CSK-huddle.jpg"),
+  },
+  "kolkata-knight-riders": {
+    "img": require("../assets/KKR.jpg"),
+    "img-huddle": require("../assets/KKR-huddle.jpg"),
   },
   "delhi-capitals": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/DC.jpg"),
+    "img-huddle": require("../assets/DC-huddle.jpg"),
   },
   "mumbai-indians": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/MI.jpg"),
+    "img-huddle": require("../assets/MI-huddle.jpg"),
   },
   "kings-xi-punjab": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/KXIP.jpg"),
+    "img-huddle": require("../assets/KXIP-huddle.jpg"),
   },
   "rajasthan-royals": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/RR.jpg"),
+    "img-huddle": require("../assets/RR-huddle.jpg"),
   },
-  "royal-challengers-banglore": {
-    "img-back": require(),
-    "img-front": require(),
+  "royal-challengers-bangalore": {
+    "img": require("../assets/RCB.jpg"),
+    "img-huddle": require("../assets/RCB-huddle.jpg"),
   },
   "sunrisers-hyderabad": {
-    "img-back": require(),
-    "img-front": require(),
+    "img": require("../assets/SRH.jpg"),
+    "img-huddle": require("../assets/SRH-huddle.jpg"),
+
   },
-  "chennai-super-kings": {
-    "img-back": require(),
-    "img-front": require(),
-  },
+
 };
-Object.freeze(BANNER_IMAGE);
-export default BANNER_IMAGE;
+export default BANNER_STYLE;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Banner from "../components/Banner";
 import PlayerCard from "../components/PlayerCard";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
 
@@ -19,21 +20,24 @@ function CardContainerTeamDetails(props) {
   } else {
     const { players } = TeamData;
     return (
-      <div className={style.teamContainer}>
-        {players.map((item) => {
-          return (
-            <PlayerCard
-              teamName={teamName}
-              key={item.id}
-              img={item.image}
-              name={item.name}
-              matches={item.stats.matches}
-              runs={item.stats.runs}
-              wickets={item.stats.wickets}
-            />
-          );
-        })}
-      </div>
+      <>
+        <Banner teamName={teamName} />
+        <div className={style.teamContainer}>
+          {players.map((item) => {
+            return (
+              <PlayerCard
+                teamName={teamName}
+                key={item.id}
+                img={item.image}
+                name={item.name}
+                matches={item.stats.matches}
+                runs={item.stats.runs}
+                wickets={item.stats.wickets}
+              />
+            );
+          })}
+        </div>
+      </>
     );
   }
 }
