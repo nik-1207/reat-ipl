@@ -6,7 +6,9 @@ const style=PLAYER_CARD()
   const { img, name, matches, runs, wickets,teamName } = props;
   return (
     <div className={style.playerCard}>
+      <div className={style[teamName]}>
       <img src={img} alt={name} className={style[teamName]}/>
+      </div>
       <div className={style.playerDetail}>
         <p className={style.name}>{name}</p>
         <ul className={style.stats}>

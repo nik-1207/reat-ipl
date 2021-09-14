@@ -9,6 +9,9 @@ const CARD_STYLES = createUseStyles({
     marginBottom: "0px",
     borderRadius: "1rem",
     boxShadow: " 4px 4px 9px 0px #a2a2a2",
+    "&:hover": {
+      cursor:"pointer"
+    },
   },
   image: {
     marginTop: " -10px",
@@ -101,7 +104,6 @@ const CARD_STYLES = createUseStyles({
       display: "none",
     },
   },
-
   "chennai-super-kings": {
     background: "linear-gradient(136deg, rgb(253, 185, 19), rgb(248, 92, 0))",
   },
