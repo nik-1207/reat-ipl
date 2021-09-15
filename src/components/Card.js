@@ -1,33 +1,39 @@
 import React, { useCallback } from "react";
 import { useHistory } from "react-router-dom";
-
-import "./temp.css";
+import CARD_STYLES from "../styles/CardStyle";
 
 function Card(props) {
   const { img, data } = props;
   const history = useHistory();
+  const teamStyle = CARD_STYLES();
   const clickHandler = useCallback(() => {
     history.push(`teams/${data.id}`);
   }, [data, history]);
-  if (!data) {
-    return <h1>Loading...</h1>;
-  } else {
-    return (
-      <div className="card" onClick={clickHandler}>
-        <img src={img} alt="team-logo" />
-        <div>
-          <h2>{data.teamName}</h2>
-          <h4>{data.venue}</h4>
-          <div>
-            <i className="fas fa-trophy"></i>
-            <span>{data.winningYears}</span>
+  return (
+    <div
+      className={`${teamStyle.teamCard} ${teamStyle[data.id]}`}
+      onClick={clickHandler}
+    >
+      <img className={teamStyle.image} src={img} alt="team-logo" />
+      <div className={teamStyle.tab}>
+        <h2 className={teamStyle.teamName}>{data.teamName}</h2>
+        <h4 className={teamStyle.venue}>{data.venue}</h4>
+        {data.winningYears.length ? (
+          <div className={teamStyle.win}>
+            <i className="fas fa-trophy">
+              {data.winningYears.map((item) => {
+                return `  ${item}  `;
+              })}
+            </i>
           </div>
-        </div>
-        Team Home
-        <i className="fas fa-angle-right tab-arrow"></i>
+        ) : (
+          <></>
+        )}
       </div>
-    );
-  }
+      <p className={teamStyle.teamHome}> Team Home</p>
+      <i className={`fas fa-angle-right tab-arrow ${teamStyle.arrow}`}></i>
+    </div>
+  );
 }
 
 export default Card;
