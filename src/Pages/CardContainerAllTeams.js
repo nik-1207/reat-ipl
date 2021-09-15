@@ -5,7 +5,7 @@ import logomap from "../config/logoMap";
 import CONTAINER_STYLE from "../styles/ContainerStyle";
 import URL from "../config/urlMap";
 
-function CardContainer(props) {
+function CardContainer() {
   const url = URL.default;
   const [TeamData, setTeamData] = useState("");
   const ContainerStyle=CONTAINER_STYLE();

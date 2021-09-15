@@ -2,10 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import PlayerCard from "../components/PlayerCard";
+import URL from "../config/urlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
 
-function CardContainerTeamDetails(props) {
-  const { url, teamName } = props;
+function CardContainerTeamDetails() {
+  const teamName=window.location.pathname.slice(7)
+  const url=URL[teamName]
   const style = TEAM_CONTAINER();
   const [TeamData, setTeamData] = useState("");
   useEffect(() => {
