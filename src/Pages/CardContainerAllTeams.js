@@ -33,8 +33,8 @@ function CardContainer(props) {
       {Error ? (
         <h1>Something went wrong</h1>
       ) : Loading ? (
-        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
-      ) : (
+        <Loader style={{ margin:"25% 45%"}} type="TailSpin" color="#00BFFF" height={80} width={80} />
+        ) : (
         <div className={ContainerStyle.cardcontainer}>
           {Object.keys(logomap).map((key, index) => {
             return (

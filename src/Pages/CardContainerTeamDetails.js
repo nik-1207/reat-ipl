@@ -5,7 +5,6 @@ import PlayerCard from "../components/PlayerCard";
 import URL from "../config/urlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
 import Loader from "react-loader-spinner";
-import NotFound from "../components/NotFound.jsx";
 
 function CardContainerTeamDetails() {
   const teamName = window.location.pathname.slice(7);
