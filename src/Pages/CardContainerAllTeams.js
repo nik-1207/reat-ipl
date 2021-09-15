@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
 import axios from "axios";
 import Card from "../components/TeamCard.jsx";
-import logomap from "../config/logoMap";
+import logomap from "../config/LogoMap";
 import CONTAINER_STYLE from "../styles/ContainerStyle";
-import URL from "../config/urlMap";
+import URL from "../config/UrlMap";
 
 function CardContainer() {
   const url = URL.default;

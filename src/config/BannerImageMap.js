@@ -1,4 +1,4 @@
-const BANNER_STYLE = {
+const BANNER_IMG = {
   "chennai-super-kings": {
     "img": require("../assets/CSK.jpg"),
     "img-huddle": require("../assets/CSK-huddle.jpg"),
@@ -34,4 +34,4 @@ const BANNER_STYLE = {
   },
 
 };
-export default BANNER_STYLE;
+export default BANNER_IMG;

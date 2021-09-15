@@ -3,7 +3,7 @@ import Loader from "react-loader-spinner";
 import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import PlayerCard from "../components/PlayerCard.jsx";
-import URL from "../config/urlMap";
+import URL from "../config/UrlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
 import NotFound from "../components/NotFound.jsx";
 
