@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import NotFound from "../components/NotFound";
 import CardContainerAllTeams from "../Pages/CardContainerAllTeams";
 import CardContainerTeamDetails from "../Pages/CardContainerTeamDetails";
 
@@ -15,7 +16,7 @@ const Routes = (
       <Route path="/teams/:url" exact>
         <CardContainerTeamDetails />
       </Route>
-      <Route>404</Route>
+      <Route>{NotFound}</Route>
     </Switch>
   </div>
 );
