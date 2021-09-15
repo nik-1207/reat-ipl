@@ -9,6 +9,9 @@ const Routes = (
       <Route path="/" exact>
         <CardContainerAllTeams />
       </Route>
+      <Route path="/teams" exact>
+        <CardContainerAllTeams />
+      </Route>      
       <Route path="/teams/:url" exact>
         <CardContainerTeamDetails />
       </Route>
