@@ -5,21 +5,11 @@ import AllTeams from "../Pages/AllTeams.jsx";
 import TeamDetails from "../Pages/TeamDetails.jsx";
 
 const Routes = (
-  <>
     <Switch>
-      <Route path="/" exact>
-        <AllTeams />
-      </Route>
-      <Route path="/teams" exact>
-        <AllTeams />
-      </Route>
-      <Route path="/teams/:url" exact>
-        <TeamDetails />
-      </Route>
-      <Route>
-        <NotFound />
-      </Route>
+      <Route path="/" exact component={AllTeams}/>
+      <Route path="/teams" exact component={AllTeams}/>
+      <Route path="/teams/:url" exact component={TeamDetails}/>
+      <Route component={NotFound}/>
     </Switch>
-  </>
 );
 export default Routes;
