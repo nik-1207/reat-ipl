@@ -12,11 +12,13 @@ const Routes = (
       </Route>
       <Route path="/teams" exact>
         <CardContainerAllTeams />
-      </Route>      
+      </Route>
       <Route path="/teams/:url" exact>
         <CardContainerTeamDetails />
       </Route>
-      <Route>{NotFound}</Route>
+      <Route>
+        <NotFound />
+      </Route>
     </Switch>
   </div>
 );

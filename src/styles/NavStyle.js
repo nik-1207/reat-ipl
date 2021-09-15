@@ -1,6 +1,6 @@
 import { createUseStyles } from "react-jss";
 
-const NAV_STYLE = createUseStyles({
+const NavStyle= createUseStyles({
   logoImage: {
     height: "50px",
     width: "40px",
@@ -19,5 +19,4 @@ const NAV_STYLE = createUseStyles({
     fontSize: "1em",
   },
 });
-Object.freeze(NAV_STYLE);
-export default NAV_STYLE;
+export default NavStyle;

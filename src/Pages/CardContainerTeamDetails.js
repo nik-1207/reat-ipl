@@ -1,10 +1,11 @@
 import axios from "axios";
+import Loader from "react-loader-spinner";
 import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
-import PlayerCard from "../components/PlayerCard";
+import PlayerCard from "../components/PlayerCard.jsx";
 import URL from "../config/urlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
-import Loader from "react-loader-spinner";
+import NotFound from "../components/NotFound.jsx";
 
 function CardContainerTeamDetails() {
   const teamName = window.location.pathname.slice(7);
@@ -37,25 +38,18 @@ function CardContainerTeamDetails() {
   const { players } = TeamData;
   return (
     <div>
-      {wrongPath ? <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="error-template">
-                    <h1>
-                        Oops!</h1>
-                    <h2>
-                        404 Not Found</h2>
-                    <div class="error-details">
-                        Sorry, an error has occured, Requested page not found!
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
- : Error ? (
+      {wrongPath ? (
+        <NotFound />
+      ) : Error ? (
         <h1>Soething went wrong</h1>
       ) : Loading ? (
-        <Loader style={{ margin:"25% 45%"}} type="TailSpin" color="#00BFFF" height={80} width={80} />
+        <Loader
+          style={{ margin: "25% 45%" }}
+          type="TailSpin"
+          color="#00BFFF"
+          height={80}
+          width={80}
+        />
       ) : (
         <>
           <Banner teamName={teamName} />
