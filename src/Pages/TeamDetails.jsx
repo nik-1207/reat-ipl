@@ -37,9 +37,10 @@ function TeamDetails() {
     }
     getAllTeamData();
   }, [url]);
+
   const { players } = TeamData;
   return (
-    <div>
+    <>
       {wrongPath ? (
         <NotFound />
       ) : Error ? (
@@ -72,7 +73,7 @@ function TeamDetails() {
           </div>
         </>
       )}
-    </div>
+    </>
   );
 }
 
