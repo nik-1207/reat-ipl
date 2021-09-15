@@ -55,7 +55,7 @@ function CardContainerTeamDetails() {
  : Error ? (
         <h1>Soething went wrong</h1>
       ) : Loading ? (
-        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+        <Loader style={{ margin:"25% 45%"}} type="TailSpin" color="#00BFFF" height={80} width={80} />
       ) : (
         <>
           <Banner teamName={teamName} />

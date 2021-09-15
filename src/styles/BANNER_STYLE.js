@@ -22,7 +22,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "delhi-capitals-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["delhi-capitals"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["delhi-capitals"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -43,7 +43,7 @@ const BANNER_STYLES = createUseStyles({
     
   },
   "mumbai-indians-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["mumbai-indians"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["mumbai-indians"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -63,7 +63,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "rajasthan-royals-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["rajasthan-royals"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["rajasthan-royals"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -83,7 +83,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "kings-xi-punjab-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["kings-xi-punjab"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["kings-xi-punjab"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -103,7 +103,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "royal-challengers-bangalore-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["royal-challengers-bangalore"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["royal-challengers-bangalore"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -123,7 +123,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "sunrisers-hyderabad-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["sunrisers-hyderabad"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["sunrisers-hyderabad"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
@@ -143,7 +143,7 @@ const BANNER_STYLES = createUseStyles({
     }
   },
   "kolkata-knight-riders-banner": {
-    backgroundImage:`url(${BANNER_IMAGE["kolkata-knight-riders"].img.default})`,
+    backgroundImage:`url(${BANNER_IMAGE["kolkata-knight-riders"]["img-huddle"].default})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "100% 0",
     backgroundSize: "auto 100%",
