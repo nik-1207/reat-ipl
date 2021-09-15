@@ -15,7 +15,7 @@ const Routes = (
       <Route path="/teams/:url" exact>
         <CardContainerTeamDetails />
       </Route>
-      <Route>NOT FOUND</Route>
+      <Route>404</Route>
     </Switch>
   </div>
 );

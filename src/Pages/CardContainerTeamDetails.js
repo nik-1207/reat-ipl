@@ -6,22 +6,40 @@ import URL from "../config/urlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
 
 function CardContainerTeamDetails() {
-  const teamName=window.location.pathname.slice(7)
-  const url=URL[teamName]
+  const teamName = window.location.pathname.slice(7);
+  const url = URL[teamName];
   const style = TEAM_CONTAINER();
   const [TeamData, setTeamData] = useState("");
+  const [Loading, setLoading] = useState(true);
+  const [Error, setError] = useState(false);
+  const [wrongPath, setwrongPath] = useState(false);
   useEffect(() => {
     async function getAllTeamData() {
-      const res = await axios.get(url);
-      setTeamData(res.data);
+      if(!url)
+      {
+        setwrongPath(true);
+      }else{
+        setwrongPath(false);
+        await axios.get(url)
+      .then((res) => {
+        setTeamData(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+      }
     }
     getAllTeamData();
   }, [url]);
-  if (!TeamData) {
-    return <h1>Loading....</h1>;
-  } else {
-    const { players } = TeamData;
-    return (
+  const { players } = TeamData;
+  return( <div>
+    {wrongPath?<h1>404</h1>:Error?
+    <h1>Soething went wrong</h1>:
+    Loading ? (
+      <h1>Loading</h1>
+    ) : (
       <>
         <Banner teamName={teamName} />
         <div className={style.teamContainer}>
@@ -40,8 +58,8 @@ function CardContainerTeamDetails() {
           })}
         </div>
       </>
-    );
-  }
-}
+    )}
+  </div>)}
+
 
 export default CardContainerTeamDetails;
