@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Loader from "react-loader-spinner";
 import axios from "axios";
 import Card from "../components/Card";
 import logomap from "../config/logoMap";
@@ -32,7 +33,7 @@ function CardContainer(props) {
       {Error ? (
         <h1>Something went wrong</h1>
       ) : Loading ? (
-        <h1>Loading</h1>
+        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
       ) : (
         <div className={ContainerStyle.cardcontainer}>
           {Object.keys(logomap).map((key, index) => {

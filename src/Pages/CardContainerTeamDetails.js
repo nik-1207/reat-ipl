@@ -4,6 +4,7 @@ import Banner from "../components/Banner";
 import PlayerCard from "../components/PlayerCard";
 import URL from "../config/urlMap";
 import TEAM_CONTAINER from "../styles/TeamContainerStyles";
+import Loader from "react-loader-spinner";
 
 function CardContainerTeamDetails() {
   const teamName = window.location.pathname.slice(7);
@@ -15,51 +16,55 @@ function CardContainerTeamDetails() {
   const [wrongPath, setwrongPath] = useState(false);
   useEffect(() => {
     async function getAllTeamData() {
-      if(!url)
-      {
+      if (!url) {
         setwrongPath(true);
-      }else{
+      } else {
         setwrongPath(false);
-        await axios.get(url)
-      .then((res) => {
-        setTeamData(res.data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
+        await axios
+          .get(url)
+          .then((res) => {
+            setTeamData(res.data);
+            setLoading(false);
+          })
+          .catch(() => {
+            setError(true);
+            setLoading(false);
+          });
       }
     }
     getAllTeamData();
   }, [url]);
   const { players } = TeamData;
-  return( <div>
-    {wrongPath?<h1>404</h1>:Error?
-    <h1>Soething went wrong</h1>:
-    Loading ? (
-      <h1>Loading</h1>
-    ) : (
-      <>
-        <Banner teamName={teamName} />
-        <div className={style.teamContainer}>
-          {players.map((item) => {
-            return (
-              <PlayerCard
-                teamName={teamName}
-                key={item.id}
-                img={item.image}
-                name={item.name}
-                matches={item.stats.matches}
-                runs={item.stats.runs}
-                wickets={item.stats.wickets}
-              />
-            );
-          })}
-        </div>
-      </>
-    )}
-  </div>)}
-
+  return (
+    <div>
+      {wrongPath ? (
+        <h1>404</h1>
+      ) : Error ? (
+        <h1>Soething went wrong</h1>
+      ) : Loading ? (
+        <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />
+      ) : (
+        <>
+          <Banner teamName={teamName} />
+          <div className={style.teamContainer}>
+            {players.map((item) => {
+              return (
+                <PlayerCard
+                  teamName={teamName}
+                  key={item.id}
+                  img={item.image}
+                  name={item.name}
+                  matches={item.stats.matches}
+                  runs={item.stats.runs}
+                  wickets={item.stats.wickets}
+                />
+              );
+            })}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
 
 export default CardContainerTeamDetails;
