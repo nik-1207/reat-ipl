@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Loader from "react-loader-spinner";
-import axios from "axios";
+import CustomLoader from "../components/CustomLoader";
+import axios from "../api/axios";
 import URL from "../config/UrlMap";
 import LogoMap from "../config/LogoMap";
 import Card from "../components/TeamCard.jsx";
@@ -15,19 +15,7 @@ function CardContainer() {
   const style = ContainerStyle();
 
   useEffect(() => {
-    async function getAllTeamData() {
-      await axios
-        .get(url)
-        .then((res) => {
-          setTeamData(res.data);
-          setLoading(false);
-        })
-        .catch(() => {
-          setError(true);
-          setLoading(false);
-        });
-    }
-    getAllTeamData();
+    axios(setLoading,setError,setTeamData,url)
   }, [url]);
 
   return (
@@ -35,7 +23,7 @@ function CardContainer() {
       {Error ? (
         <h1>Something went wrong</h1>
       ) : Loading ? (
-        <Loader style={{ margin:"25% 45%"}} type="TailSpin" color="#00BFFF" height={80} width={80} />
+        <h1></h1>
         ) : (
         <div className={style.cardcontainer}>
           {Object.keys(LogoMap).map((key, index) => {
