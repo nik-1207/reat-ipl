@@ -9,7 +9,7 @@ const Routes = (
       <Route path="/" exact component={AllTeams}/>
       <Route path="/teams" exact component={AllTeams}/>
       <Route path="/teams/:url" exact component={TeamDetails}/>
-      <Route component={NotFound}/>
+      <Route path="/NotFound" component={NotFound}/>
     </Switch>
 );
 export default Routes;

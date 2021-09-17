@@ -9,8 +9,8 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <CustomLoader/>
       <div className="App">
-        <CustomLoader/>
         {Routes}
       </div>
     </Router>

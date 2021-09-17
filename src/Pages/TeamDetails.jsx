@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../api/axios";
 import Loader from "react-loader-spinner";
 import URL from "../config/UrlMap";
 import Banner from "../components/Banner.jsx";
@@ -8,7 +8,6 @@ import NotFound from "../components/NotFound.jsx";
 import PlayerCard from "../components/PlayerCard.jsx";
 
 function TeamDetails() {
-
   const teamName = window.location.pathname.slice(7);
   const url = URL[teamName];
   const style = Container();
@@ -16,26 +15,14 @@ function TeamDetails() {
   const [Loading, setLoading] = useState(true);
   const [Error, setError] = useState(false);
   const [wrongPath, setwrongPath] = useState(false);
-  
   useEffect(() => {
-    async function getAllTeamData() {
-      if (!url) {
-        setwrongPath(true);
-      } else {
-        setwrongPath(false);
-        await axios
-          .get(url)
-          .then((res) => {
-            setTeamData(res.data);
-            setLoading(false);
-          })
-          .catch(() => {
-            setError(true);
-            setLoading(false);
-          });
-      }
+    if (!url) {
+      setwrongPath(true);
+    } else {
+      setwrongPath(false);
+      axios(setLoading, setError, setTeamData, url);
+
     }
-    getAllTeamData();
   }, [url]);
 
   const { players } = TeamData;
@@ -46,13 +33,7 @@ function TeamDetails() {
       ) : Error ? (
         <h1>Soething went wrong</h1>
       ) : Loading ? (
-        <Loader
-          style={{ margin: "25% 45%" }}
-          type="TailSpin"
-          color="#00BFFF"
-          height={80}
-          width={80}
-        />
+        <h1></h1>
       ) : (
         <>
           <Banner teamName={teamName} />
