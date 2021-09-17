@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../api/axios";
-import Loader from "react-loader-spinner";
 import URL from "../config/UrlMap";
 import Banner from "../components/Banner.jsx";
 import Container from "../styles/PlayerContainerStyles";
-import NotFound from "../components/NotFound.jsx";
 import PlayerCard from "../components/PlayerCard.jsx";
 
 function TeamDetails() {
@@ -12,29 +10,17 @@ function TeamDetails() {
   const url = URL[teamName];
   const style = Container();
   const [TeamData, setTeamData] = useState("");
-  const [Loading, setLoading] = useState(true);
-  const [Error, setError] = useState(false);
-  const [wrongPath, setwrongPath] = useState(false);
   useEffect(() => {
     if (!url) {
-      setwrongPath(true);
     } else {
-      setwrongPath(false);
-      axiosCall(setLoading, setError, setTeamData, url);
-
+      axiosCall(setTeamData, url);
     }
   }, [url]);
 
   const { players } = TeamData;
   return (
     <>
-      {wrongPath ? (
-        <NotFound />
-      ) : Error ? (
-        <h1>Soething went wrong</h1>
-      ) : Loading ? (
-        <h1></h1>
-      ) : (
+      {TeamData && (
         <>
           <Banner teamName={teamName} />
           <div className={style.teamContainer}>

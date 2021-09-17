@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import CustomLoader from "../components/CustomLoader";
 import axiosCall from "../api/axios";
 import URL from "../config/UrlMap";
 import LogoMap from "../config/LogoMap";
@@ -9,23 +8,16 @@ import ContainerStyle from "../styles/TeamContainerStyle";
 function CardContainer() {
 
   const url = URL.default;
-  const [Loading, setLoading] = useState(true);
   const [TeamData, setTeamData] = useState("");
-  const [Error, setError] = useState(false);
   const style = ContainerStyle();
 
   useEffect(() => {
-    axiosCall(setLoading,setError,setTeamData,url)
+    axiosCall(setTeamData,url)
   }, [url]);
 
   return (
     <>
-      {Error ? (
-        <h1>Something went wrong</h1>
-      ) : Loading ? (
-        <h1></h1>
-        ) : (
-        <div className={style.cardcontainer}>
+      {TeamData &&( <div className={style.cardcontainer}>
           {Object.keys(LogoMap).map((key, index) => {
             return (
               <Card
@@ -36,7 +28,7 @@ function CardContainer() {
             );
           })}
         </div>
-      )}
+     )}
     </>
   );
 }

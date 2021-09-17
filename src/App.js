@@ -3,16 +3,16 @@ import Navbar from "./components/Navbar";
 import "./App.css";
 import Routes from "./Route/Routes.jsx";
 import CustomLoader from "./components/CustomLoader";
-
+import ErrorBoundry from "./ErrorBoundry/ErrorBoundry"
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <CustomLoader/>
-      <div className="App">
-        {Routes}
-      </div>
+      <CustomLoader />
+      <ErrorBoundry>
+        <div className="App">{Routes}</div>
+      </ErrorBoundry>
     </Router>
   );
 }

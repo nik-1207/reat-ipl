@@ -10,8 +10,10 @@ export default function CustomLoader() {
     const handle = subscribe(LoadingEvent, (args) => {
       setloading(args.isLoading);
     });
-    handle.unsubscribe();
-  });
+    return ()=>{
+      handle.unsubscribe();
+    }
+  },[]);
 
   return (
     <>

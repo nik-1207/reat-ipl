@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import AllTeams from "../Pages/AllTeams"
 
 export default class ErrorBoundry extends Component {
     constructor(props) {
         super(props);
-        this.data=props.data
-        this.children=[props.children];
         this.state = { hasError: false };
       }
     
@@ -17,9 +14,11 @@ export default class ErrorBoundry extends Component {
           console.log(error)
       }
       render() {
-        if (this.data) {
-            return <AllTeams/>
+        if (this.state.hasError) 
+        {
+            return <h1>Error </h1>
         }
-        return <h1>waiting</h1>;
+        return this.props.children
+
     }
 }
