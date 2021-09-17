@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomLoader from "../components/CustomLoader";
-import axios from "../api/axios";
+import axiosCall from "../api/axios";
 import URL from "../config/UrlMap";
 import LogoMap from "../config/LogoMap";
 import Card from "../components/TeamCard.jsx";
@@ -15,7 +15,7 @@ function CardContainer() {
   const style = ContainerStyle();
 
   useEffect(() => {
-    axios(setLoading,setError,setTeamData,url)
+    axiosCall(setLoading,setError,setTeamData,url)
   }, [url]);
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "../api/axios";
+import axiosCall from "../api/axios";
 import Loader from "react-loader-spinner";
 import URL from "../config/UrlMap";
 import Banner from "../components/Banner.jsx";
@@ -20,7 +20,7 @@ function TeamDetails() {
       setwrongPath(true);
     } else {
       setwrongPath(false);
-      axios(setLoading, setError, setTeamData, url);
+      axiosCall(setLoading, setError, setTeamData, url);
 
     }
   }, [url]);
