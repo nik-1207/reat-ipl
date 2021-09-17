@@ -7,15 +7,11 @@ import PlayerCard from "../components/PlayerCard.jsx";
 
 function TeamDetails() {
   const teamName = window.location.pathname.slice(7);
-  const url = URL[teamName];
   const style = Container();
   const [TeamData, setTeamData] = useState("");
   useEffect(() => {
-    if (!url) {
-    } else {
-      axiosCall(setTeamData, url);
-    }
-  }, [url]);
+      axiosCall(setTeamData, teamName);
+  }, [teamName]);
 
   const { players } = TeamData;
   return (

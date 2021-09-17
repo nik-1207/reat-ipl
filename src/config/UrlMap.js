@@ -1,5 +1,5 @@
 const URL = {
-  default: "https://ipl-t20.herokuapp.com/teams",
+  "": "https://ipl-t20.herokuapp.com/teams",
   "chennai-super-kings":
     "https://ipl-t20.herokuapp.com/teams/chennai-super-kings",
   "delhi-capitals": "https://ipl-t20.herokuapp.com/teams/delhi-capitals",
