@@ -1,10 +1,20 @@
 import axios from "axios";
 import { LoadingEvent } from "../event/LoadingEvent";
 import { publish } from "../pubsub/PubSub";
-export default async function getAllTeamData(callBackData, url) {
-  await axios.get(url).then((res) => {
-    callBackData(res.data);
-  });
+import URL from "../config/UrlMap";
+export default async function getAllTeamData(callBackData, teamName)
+{
+  const url=URL[teamName]
+  if(url)
+  {
+    await axios.get(url).then((res) => {
+      callBackData(res.data);
+    });
+  }
+  else{
+    callBackData("Invalid Path")
+  }
+
 }
 
 axios.interceptors.request.use(

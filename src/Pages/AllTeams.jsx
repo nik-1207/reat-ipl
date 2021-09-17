@@ -7,13 +7,13 @@ import ContainerStyle from "../styles/TeamContainerStyle";
 
 function CardContainer() {
 
-  const url = URL.default;
+  const teamName=window.location.pathname.slice(7);
   const [TeamData, setTeamData] = useState("");
   const style = ContainerStyle();
 
   useEffect(() => {
-    axiosCall(setTeamData,url)
-  }, [url]);
+    axiosCall(setTeamData,teamName)
+  }, [teamName]);
 
   return (
     <>
