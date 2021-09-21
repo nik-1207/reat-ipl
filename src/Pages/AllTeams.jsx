@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../api/axios";
-import URL from "../config/UrlMap";
 import LogoMap from "../config/LogoMap";
 import Card from "../components/TeamCard.jsx";
 import ContainerStyle from "../styles/TeamContainerStyle";

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axiosCall from "../api/axios";
-import URL from "../config/UrlMap";
 import Banner from "../components/Banner.jsx";
 import Container from "../styles/PlayerContainerStyles";
 import PlayerCard from "../components/PlayerCard.jsx";
