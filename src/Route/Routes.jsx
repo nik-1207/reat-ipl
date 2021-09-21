@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NotFound from "../components/NotFound";
 import AllTeams from "../Pages/AllTeams.jsx";
